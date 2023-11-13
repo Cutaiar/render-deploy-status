@@ -6,6 +6,13 @@
   "author": "Dillon Cutaiar",
   "license": "MIT",
   "dependencies": {
+    "api": "^6.1.1",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0"
   }
 }
