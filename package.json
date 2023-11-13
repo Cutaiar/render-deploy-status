@@ -1,0 +1,11 @@
+{
+  "name": "render-deploy-status",
+  "version": "0.1.0",
+  "description": "Tiny node server to make Render deploy status available",
+  "main": "index.js",
+  "author": "Dillon Cutaiar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
