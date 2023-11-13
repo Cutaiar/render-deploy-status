@@ -1,4 +1,6 @@
 // Tiny node server to make Render deploy status available
+
+// TODO: Should we only call dotenv in DEV mode?
 require('dotenv').config();
 const express = require('express');
 const api = require('api');
@@ -9,16 +11,18 @@ renderApi.auth(process.env.API_KEY);
 
 const status = (deployStatus) => {
   // Display strings
-  const unknown = 'Unknown';
-  const inProgress = 'InProgress';
-  const success = 'Success';
-  const failed = 'Failed';
+  const unknown = 'unknown';
+  const inProgress = 'in progress';
+  const success = 'success';
+  const failed = 'failed';
 
   // If we are given a key other than a string, we don't know what's going on
   if (typeof deployStatus !== 'string') {
     return unknown;
   }
 
+  // Otherwise map the deploy status to a display string
+  // This maps all possible values of deploy status currently available at https://api-docs.render.com/reference/get-deploys
   const statusMap = {
     created: inProgress,
     build_in_progress: inProgress,
@@ -31,6 +35,7 @@ const status = (deployStatus) => {
     pre_deploy_in_progress: inProgress,
     pre_deploy_failed: failed,
   };
+
   return statusMap[deployStatus] ?? unknown;
 };
 
@@ -49,6 +54,7 @@ app.get('/', (req, res) => {
     });
 });
 
+// TODO: Should we listen on 3000?
 app.listen(3000, () => {
   console.log('App listening on port 3000');
 });
