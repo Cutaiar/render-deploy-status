@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
     });
 });
 
-// TODO: Should we listen on 3000?
-app.listen(3000, () => {
-  console.log('App listening on port 3000');
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
 });
