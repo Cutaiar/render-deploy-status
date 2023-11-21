@@ -5,8 +5,13 @@
   "main": "index.js",
   "author": "Dillon Cutaiar",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  },
   "dependencies": {
     "api": "^6.1.1",
+    "compression": "^1.7.4",
+    "debug": "^4.3.4",
     "dotenv": "^16.3.1",
     "express": "^4.18.2"
   },

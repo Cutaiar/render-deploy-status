@@ -3,9 +3,13 @@
 // TODO: Should we only call dotenv in DEV mode?
 require('dotenv').config();
 const express = require('express');
+const compression = require('compression');
 const api = require('api');
+const debug = require('debug')('main');
 
 const app = express();
+app.use(compression());
+
 const renderApi = api('@render-api/v1.0#1ifry11lo91zxhg');
 renderApi.auth(process.env.API_KEY);
 
@@ -50,11 +54,11 @@ app.get('/', (req, res) => {
       res.json({
         status: status(null), // Unknown
       });
-      console.error(err);
+      debug(err);
     });
 });
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+  debug(`App listening on port ${port}`);
 });

@@ -8,6 +8,8 @@ Tiny node server to make Render deploy status available for use in a README badg
 3. Run `node index.js` to start a local server
 4. Visit `http://localhost:3000` in your browser to test the endpoint
 
+To get logging out the app, set the environment variable `DEBUG=main`.
+
 ## Deploy your own
 
 You can use this repo to deploy your own Render Web Service that will make a publicly available deploy status for another Render Web Service. You can then use with a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) to make this status available in that projects README.
