@@ -1,5 +1,7 @@
 # render-deploy-status
-Tiny node server to make Render deploy status available for use in a README badge. Motivated by this [post](https://community.render.com/t/any-way-to-export-render-com-deployment-status-as-status-badges/4520).
+[![Render Status](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Frender-deploy-status.onrender.com%2Fsrv-cl99855o7jlc73bgmoj0&query=%24.status&style=flat-square&logo=Render&label=Render)](https://dashboard.render.com/web/srv-cl99855o7jlc73bgmoj0)
+
+Tiny node server to make Render deploy status available for use in a README badge. Motivated by this [post](https://community.render.com/t/any-way-to-export-render-com-deployment-status-as-status-badges/4520). (the badge above is using this service)
 
 ## Development
 
@@ -27,4 +29,5 @@ You can use this repo to deploy your own Render Web Service that will make a pub
 
 - Check app against [Express best practices](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production) again
 - Consider using a [Shields.io Endpoint Badge](https://shields.io/badges/endpoint-badge)
-- Use this service to make a deploy status for this service
+
+
