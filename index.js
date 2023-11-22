@@ -43,8 +43,19 @@ const status = (deployStatus) => {
   return statusMap[deployStatus] ?? unknown;
 };
 
-app.get('/', (req, res) => {
-  renderApi.getDeploys({ limit: '1', serviceId: process.env.SERVICE_ID })
+app.get('/:id?', (req, res) => {
+  const serviceId = req.params.id;
+
+  if (!serviceId) {
+    res.json({
+      status: status(null), // Unknown
+    });
+    debug('No service ID in url');
+    return;
+  }
+  debug(`Getting deploys for Render service: ${serviceId}`);
+
+  renderApi.getDeploys({ limit: '1', serviceId })
     .then(({ data }) => {
       res.json({
         status: status(data[0]?.deploy?.status),
@@ -59,6 +70,7 @@ app.get('/', (req, res) => {
 });
 
 const port = process.env.PORT || 3001;
+debug(`NODE_ENV: ${process.env.NODE_ENV}`);
 app.listen(port, () => {
   debug(`App listening on port ${port}`);
 });
