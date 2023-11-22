@@ -6,7 +6,8 @@
   "author": "Dillon Cutaiar",
   "license": "MIT",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "serve": "nodemon ./index.js"
   },
   "dependencies": {
     "api": "^6.1.1",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "eslint": "^8.53.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.0"
+    "eslint-plugin-import": "^2.29.0",
+    "nodemon": "^3.0.1"
   }
 }
