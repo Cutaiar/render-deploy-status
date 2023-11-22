@@ -17,13 +17,14 @@ To get logging out the app, set the environment variable `DEBUG=main`.
 
 You can use this repo to deploy your own Render Web Service that will make a publicly available deploy status for another Render Web Service. You can then use with a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) to make this status available in that projects README.
 
-1. Clone this repo
-2. Create a new Render Web Service and connect it to this repo
+1. Fork this repo
+2. Create a new Render Web Service and connect it to your fork
 3. Use `npm i` for "Build Command" and `npm start` for "Start Command"
-4. In your Render account settings, generate an API Key and add it to this service's environment variables with a key of `API_KEY`
-5. Find the `serviceId` of the Render service you are **interested in creating a badge for** (goto the services home page and check the url for `srv-*`)
-6. Visit `<this-render-web-service-url>/<your-service-id>` in your browser to test the endpoint (i.e. `https://render-deploy-status.onrender.com/srv-abc`)
-7. Create a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) with the endpoint being the endpoint above and use that in your desired projects README
+4. In your Render account settings, generate an API Key and add it to the web service's environment variables with a key of `API_KEY`
+5. Once deployed, this web service can expose the deploy status of any of **your** Render services including itself
+6. Find the `serviceId` of the Render service you are **interested in creating a badge for** (goto the services home page and check the url for `srv-*`)
+7. Visit `<this-render-web-service-url>/<your-service-id>` in your browser (or `curl` it in the terminal) to test the endpoint (i.e. `https://render-deploy-status.onrender.com/srv-abc`). The response will be in the form `{"status":"success"}`
+8. Create a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) with the endpoint being the endpoint above and use that in your desired projects README
 
 ## TODO
 
