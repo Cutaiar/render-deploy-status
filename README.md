@@ -21,7 +21,7 @@ You can use this repo to deploy your own Render Web Service that will make a pub
 4. In your Render account settings, generate an API Key and add it to this service's environment variables with a key of `API_KEY`
 5. Find the `serviceId` of the Render service you are **interested in creating a badge for** (goto the services home page and check the url for `srv-*`)
 6. Visit `<this-render-web-service-url>/<your-service-id>` in your browser to test the endpoint (i.e. `https://render-deploy-status.onrender.com/srv-abc`)
-7. Create a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) with the endpoint being this Render Web Service and use that in your desired projects README
+7. Create a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) with the endpoint being the endpoint above and use that in your desired projects README
 
 ## TODO
 
