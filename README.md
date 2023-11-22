@@ -6,7 +6,7 @@ Tiny node server to make Render deploy status available for use in a README badg
 1. Clone this repo
 2. Run `npm i`
 3. Run `node index.js` to start a local server
-4. Visit `http://localhost:3000` in your browser to test the endpoint
+4. Visit `http://localhost:3001` in your browser to test the endpoint
 
 To get logging out the app, set the environment variable `DEBUG=main`.
 
