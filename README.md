@@ -30,5 +30,4 @@ You can use this repo to deploy your own Render Web Service that will make a pub
 
 - Check app against [Express best practices](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production) again
 - Consider using a [Shields.io Endpoint Badge](https://shields.io/badges/endpoint-badge)
-
-
+- Allow others to deploy from a [container registry](https://render.com/docs/web-services#deploying-from-a-container-registry)
