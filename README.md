@@ -1,5 +1,5 @@
 # render-deploy-status
-[![Render Status](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Frender-deploy-status.onrender.com%2Fsrv-cl99855o7jlc73bgmoj0&query=%24.status&style=flat-square&logo=Render&label=Render)](https://dashboard.render.com/web/srv-cl99855o7jlc73bgmoj0)
+[![Render Status](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Frender-deploy-status.onrender.com%2Fsrv-clhcej58td7s73bnn9p0&query=%24.status&style=flat-square&logo=Render&label=Render)](https://dashboard.render.com/web/srv-clhcej58td7s73bnn9p0)
 
 Tiny node server to make Render deploy status available for use in a README badge. Motivated by this [post](https://community.render.com/t/any-way-to-export-render-com-deployment-status-as-status-badges/4520). (the badge above is using this service)
 
