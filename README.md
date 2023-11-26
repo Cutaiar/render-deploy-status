@@ -36,4 +36,5 @@ Make sure to bump the version in `package.json` and run `npm i` to update the `p
 
 - Check app against [Express best practices](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production) again
 - Consider using a [Shields.io Endpoint Badge](https://shields.io/badges/endpoint-badge)
-- Allow others to deploy from a [container registry](https://render.com/docs/web-services#deploying-from-a-container-registry)
+- Consider using a [Render Deploy Action](https://github.com/marketplace/actions/render-deploy-action)
+- Consider deploying from tags rather than main
