@@ -71,6 +71,14 @@ app.get('/:id?', (req, res) => {
 
 const port = process.env.PORT || 3001;
 debug(`NODE_ENV: ${process.env.NODE_ENV}`);
-app.listen(port, () => {
+const server = app.listen(port, () => {
   debug(`App listening on port ${port}`);
 });
+
+async function closeGracefully(signal) {
+  debug(`*^!@4=> Received signal to terminate: ${signal}`);
+  await server.close();
+  process.kill(process.pid, signal);
+}
+process.once('SIGINT', closeGracefully);
+process.once('SIGTERM', closeGracefully);
