@@ -30,16 +30,19 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      # This step uses [npm-get-version-action](https://github.com/martinbeentjes/npm-get-version-action) to get the current version in package.json to use as the docker image version
+      - name: Get current package version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
       # This step uses [docker/metadata-action](https://github.com/docker/metadata-action#about) to extract tags and labels that will be applied to the specified image. The `id` "meta" allows the output of this step to be referenced in a subsequent step. The `images` value provides the base name for the tags and labels.
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
-      - name: Get current package version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
+          tags: type=semver,pattern={{version}}
       
       # This step uses the `docker/build-push-action` action to build the image, based on your repository's `Dockerfile`. If the build succeeds, it pushes the image to GitHub Packages.
       # It uses the `context` parameter to define the build's context as the set of files located in the specified path. For more information, see "[Usage](https://github.com/docker/build-push-action#usage)" in the README of the `docker/build-push-action` repository.
