@@ -1,10 +1,10 @@
-#
-name: Create and publish a Docker image
+name: Create and publish a Docker image, and trigger a deploy to Render
 
-# Configures this workflow to run every time a change is pushed to the branch called `release`.
+# Configures this workflow to run every time a tag is pushed
 on:
   push:
-    branches: ['main']
+    tags:
+      - "*"
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -31,11 +31,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # This step uses [npm-get-version-action](https://github.com/martinbeentjes/npm-get-version-action) to get the current version in package.json to use as the docker image version
-      - name: Get current package version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-
       # This step uses [docker/metadata-action](https://github.com/docker/metadata-action#about) to extract tags and labels that will be applied to the specified image. The `id` "meta" allows the output of this step to be referenced in a subsequent step. The `images` value provides the base name for the tags and labels.
       - name: Extract metadata (tags, labels) for Docker
         id: meta
@@ -43,7 +38,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            ${{ steps.package-version.outputs.current-version}}
+            type=semver,pattern={{version}}
             latest
       
       # This step uses the `docker/build-push-action` action to build the image, based on your repository's `Dockerfile`. If the build succeeds, it pushes the image to GitHub Packages.
@@ -58,7 +53,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       
       # This step triggers a deploy to render after the new image is built and pushed
-      - name: Deploy to production
+      - name: Trigger Render deploy
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.RENDER_SERVICE_ID }}
