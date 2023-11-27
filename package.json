@@ -1,6 +1,6 @@
 {
   "name": "render-deploy-status",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tiny node server to make Render deploy status available",
   "main": "index.js",
   "author": "Dillon Cutaiar",
