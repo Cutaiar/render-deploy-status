@@ -26,15 +26,15 @@ You can use this repo to deploy your own Render Web Service that will make a pub
 7. Visit `<this-render-web-service-url>/<your-service-id>` in your browser (or `curl` it in the terminal) to test the endpoint (i.e. `https://render-deploy-status.onrender.com/srv-abc`). The response will be in the form `{"status":"success"}`
 8. Create a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) with the endpoint being the endpoint above and use that in your desired projects README
 
+*Or you could use the docker image this repo creates.*
+
 ## Releasing
 
 The `main` branch is the release branch. Whenever a push is made to this branch, a docker image will be built and published to the Github Container Registry.
 
-Make sure to bump the version in `package.json` and run `npm i` to update the `package-lock.json` before making a PR into master.
+To release, bump the version using `npm version <major | minor | patch>`, then push the tag this created using `git push origin <new version>`.
 
 ## TODO
 
 - Check app against [Express best practices](https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production) again
 - Consider using a [Shields.io Endpoint Badge](https://shields.io/badges/endpoint-badge)
-- Consider using a [Render Deploy Action](https://github.com/marketplace/actions/render-deploy-action)
-- Consider deploying from tags rather than main
