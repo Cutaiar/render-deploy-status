@@ -34,7 +34,7 @@ To release a new version:
 1. Bump the version using `npm version <major|minor|patch>`
 2. Push the tag this created using `git push origin <new version>`
 
-This will trigger the `build-publish-deploy-image.yml` workflow which will build a docker image, publish it to the Github Container Registry, and trigger a deploy on Render. Since this new image also has the `latest`, it will be image Render deploys.
+This will trigger the `build-publish-deploy-image.yml` workflow which will build a docker image, publish it to the Github Container Registry, and trigger a deploy on Render. Since this new image also has the `latest` tag, it will be image Render deploys.
 
 ## ✅ TODO
 
