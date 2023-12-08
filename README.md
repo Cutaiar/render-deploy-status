@@ -3,6 +3,8 @@
 
 Tiny node server to make Render deploy status available for use in a README badge. Motivated by this [post](https://community.render.com/t/any-way-to-export-render-com-deployment-status-as-status-badges/4520). The badge above is using this service to get its own status 😎.
 
+> This project is mentioned in the [Render community](https://community.render.com/t/render-deploy-status-badge-available/17281?u=cutaiar) and on the [Feature request board](https://feedback.render.com/features/p/add-status-badge).
+
 ## 🚁 Deploy your own
 
 You can use this repo to deploy your own Render Web Service that will make a publicly available deploy status for another Render Web Service. You can then use with a [Shields.io Dynamic JSON Badge](https://shields.io/badges/dynamic-json-badge) to make this status available in that projects README.
