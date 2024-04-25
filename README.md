@@ -1,5 +1,7 @@
 # render-deploy-status
 [![Render Status](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Frender-deploy-status.onrender.com%2Fsrv-clhcej58td7s73bnn9p0&query=%24.status&style=flat-square&logo=Render&label=Render)](https://dashboard.render.com/web/srv-clhcej58td7s73bnn9p0)
+![Static Badge](https://img.shields.io/badge/Downloads-2.25K-blue?style=flat-square&logo=docker)
+
 
 Tiny node server to make Render deploy status available for use in a README badge. Motivated by this [post](https://community.render.com/t/any-way-to-export-render-com-deployment-status-as-status-badges/4520). The badge above is using this service to get its own status 😎.
 
